@@ -14,7 +14,11 @@ Before using the scraper:
     source myvenv/bin/activate
 5. Install requirements.txt:
     pip install -r requirements.txt
-6. Install PhantomJS (if not already installed)
+6. Install PhantomJS (if not already installed):
+
+```
+npm install phantomjs
+```
 
 ## Files and Functionality
 The EDGAR 13F Scraper parses fund holdings pulled from EDGAR, given a ticker or CIK. 

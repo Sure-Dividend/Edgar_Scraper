@@ -75,18 +75,18 @@ class HoldingsScraper:
         
         # Comment out try/except lines below to run most recent filing only
         # Checks for more results and click next page
-        try:
-            next = self.browser.find_element_by_xpath("//input[@value='Next 40']")
-            next.click()
-            self.retrieve_filings()
-        except:
-            # Otherwise loop through all filings found to get data
-            for link in self.links:
-                url = DOMAIN + link.get('href', None)
-                self.parse_filing(url)
+#         try:
+#             next = self.browser.find_element_by_xpath("//input[@value='Next 40']")
+#             next.click()
+#             self.retrieve_filings()
+#         except:
+#             # Otherwise loop through all filings found to get data
+#             for link in self.links:
+#                 url = DOMAIN + link.get('href', None)
+#                 self.parse_filing(url)
         # Uncomment below to run most recent filing only
-        # url = DOMAIN + self.links[0].get('href', None)
-        # self.parse_filing(url)
+        url = DOMAIN + self.links[0].get('href', None)
+        self.parse_filing(url)
 
     def parse_filing(self, url):
         """Examines filing to determine how to parse holdings data.
